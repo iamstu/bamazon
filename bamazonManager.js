@@ -91,10 +91,9 @@ function inventory(){
         }]).then(function(response){
         var item = parseInt(response.id);
         var num = parseInt(response.quantity);
-            connection.query("UPDATE products SET stock_quantity = stock_quantity - " + num + " WHERE item_id =" + item
+            connection.query("UPDATE products SET stock_quantity = stock_quantity + " + num + " WHERE item_id =" + item
             ,function(err, res){
                 if (err) throw err;
-                console.log(res);
                 initManager();
             });
             
@@ -125,11 +124,10 @@ function newStock(){
             {
                 product_name: res.name,
                 department_name: res.dep,
-                price: parseInt(res.price),
+                price: parseFloat(res.price),
                 stock_quantity: parseInt(res.qty)
             },
         function(response){
-            console.log(response);
             initManager();
         })
     })
