@@ -55,7 +55,7 @@ function customer(){
         productsArr[i].id + "." +
         productsArr[i].name + "\n$" +
         productsArr[i].price + "\n" +
-        productsArr[i].qty + "In stock" +
+        productsArr[i].qty + " left in stock" +
          "\n----------------------------------\n" );
     }
     inquire.prompt([{
@@ -86,6 +86,7 @@ function purchase(selectedId){
         connection.query("UPDATE products SET stock_quantity = stock_quantity -" +  reqQty + " WHERE item_id =" + selectedId 
         ,function(err, res){
             console.log("Total: $" + parseFloat(productsArr[(purchaseId-1)].price) * parseFloat(reqQty));
+            productsArr[(purchaseId-1)].qty -= reqQty;
             inquire.prompt([{
                 type: "confirm",
                 message: "Would you like to make another purchase?",
