@@ -37,3 +37,5 @@ Add inventory:
 Add product:
 
 ![IMG of new product](https://github.com/iamstu/bamazon/blob/master/images/manager-fifth.png)
+
+Technologies used: MySQL, Node.js, inquirer, JavaScript
