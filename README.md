@@ -1,5 +1,9 @@
 # bamazon
 
+
+This is an app made to run in node with MySQL. To run it run npm install and then copy the sql file and run it in the MySQL database.
+Then you can run the customer or the manager versions of the app in node.js.
+
 bamazon Customer:
 
 First the app prints the list of products and asks the use to select an ID. When an ID is entered a quantity is requested. After the quantity is selected the total is shown for the purchase and the user is prompted to either make another purchase or quit the app. the quantity is removed from MySQL. 
